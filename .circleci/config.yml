@@ -24,7 +24,7 @@ jobs:
     steps:
       - setup_ssh_keys
       - checkout
-      - run_error
+      # - run_error
       - badges/create_badge
       # - badges/create_badge:
       #     app: $CIRCLE_BRANCH
