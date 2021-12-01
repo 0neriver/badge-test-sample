@@ -8,10 +8,10 @@ commands:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "a0:b1:c2:d3:e4:f5:a6:b7:c8:d9:ea:fb:0c:1d:2e:55"
+            - "be:ac:f7:87:be:03:f2:e3:7e:35:6e:88:03:dc:c9:21"
 
 jobs:
-  job_name:
+  change_readme:
     docker:
       - image: cimg/base:stable
     steps:
@@ -22,3 +22,8 @@ jobs:
           color: "orange"
           test: "v2"
       - badges/update_readme
+
+workflows:
+  run:
+    jobs:
+      - change_readme
