@@ -19,8 +19,8 @@ jobs:
       - checkout
       - badges/create_badge:
           app: $CIRCLE_BRANCH
-          color: "white"
-          text: "v4"
+          color: "black"
+          text: "v5"
       - badges/update_readme
 
 workflows:
