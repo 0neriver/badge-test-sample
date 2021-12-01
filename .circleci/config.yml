@@ -17,10 +17,11 @@ jobs:
     steps:
       - setup_ssh_keys
       - checkout
-      - badges/create_badge
-          # app: "test"
-          # color: "orange"
-          # test: "v2"
+      - badges/create_badge:
+          app: "test"
+          status: "true"
+          color: "orange"
+          test: "v2"
       - badges/update_readme
 
 workflows:
