@@ -19,9 +19,8 @@ jobs:
       - checkout
       - badges/create_badge:
           app: "test"
-          status: "true"
-          color: "orange"
-          text: "v2"
+          color: "green"
+          text: "v3"
       - badges/update_readme
 
 workflows:
