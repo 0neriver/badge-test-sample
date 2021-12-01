@@ -22,8 +22,17 @@ jobs:
           color: "black"
           text: "v5"
       - badges/update_readme
+  run_error:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: test error
+          command: |
+            exit 1
 
 workflows:
   run:
     jobs:
+      - run_error
       - change_readme
