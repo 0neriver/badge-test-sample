@@ -17,10 +17,11 @@ jobs:
     steps:
       - setup_ssh_keys
       - checkout
-      - badges/create_badge:
-          app: $CIRCLE_BRANCH
-          color: "black"
-          text: "v5"
+      - badges/create_badge
+      # - badges/create_badge:
+      #     app: $CIRCLE_BRANCH
+      #     color: "black"
+      #     text: "v5"
       - badges/update_readme
   run_error:
     docker:
