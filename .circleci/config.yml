@@ -36,4 +36,6 @@ workflows:
   run:
     jobs:
       - run_error
-      - change_readme
+      - change_readme:
+          requires:
+            - run_error
