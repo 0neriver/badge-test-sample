@@ -18,9 +18,9 @@ jobs:
       - setup_ssh_keys
       - checkout
       - badges/create_badge:
-          app: "test"
-          color: "green"
-          text: "v3"
+          app: $CIRCLE_BRANCH
+          color: "white"
+          text: "v4"
       - badges/update_readme
 
 workflows:
