@@ -10,6 +10,13 @@ commands:
           fingerprints:
             - "be:ac:f7:87:be:03:f2:e3:7e:35:6e:88:03:dc:c9:21"
 
+  run_error:
+    steps:
+      - run:
+          name: test error
+          command: |
+            exit 1
+
 jobs:
   change_readme:
     docker:
@@ -17,25 +24,16 @@ jobs:
     steps:
       - setup_ssh_keys
       - checkout
+      - run_error
       - badges/create_badge
       # - badges/create_badge:
       #     app: $CIRCLE_BRANCH
       #     color: "black"
       #     text: "v5"
       - badges/update_readme
-  run_error:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - run:
-          name: test error
-          command: |
-            exit 1
+  
 
 workflows:
   run:
     jobs:
-      - run_error
-      - change_readme:
-          requires:
-            - run_error
+      - change_readme
